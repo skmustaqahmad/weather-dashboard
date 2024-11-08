@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   const getWeather = async (city) => {
-    const apiKey = '"YOUR_API_KEY"';
+    const apiKey = "YOUR_API_KEY";
     try {
       const currentWeather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`);
       const forecast = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${unit}`);
