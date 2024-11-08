@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+API Integration
+The Weather Dashboard uses OpenWeatherMap API for fetching weather data.
+
+Fetching Data
+const apiKey = "YOUR_API_KEY";
+const city = "YourCity";
+
+fetch(
+  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
+)
+  .then((response) => response.json())
+  .then((data) => displayWeather(data))
+  .catch((error) => console.error("Error:", error));
